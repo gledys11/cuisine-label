@@ -315,6 +315,7 @@ for each_recipe in data_label:
 print "Total spoonacular with cuisines"
 print len(recipes_spoonacular_all)
 
+
 file = open(os.getcwd()+'/data/spoonacular_recipes_cuisines.json', 'wb')
 file.write(json.dumps(recipes_spoonacular_all))
 file.close()
