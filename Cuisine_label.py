@@ -312,7 +312,7 @@ for each_recipe in data_label:
     recipe['cuisines'] = cuisine
     recipes_spoonacular_all.append(recipe)
 
-print "Total spoonacular with cuisines"
+print "Total spoonacular with cuisines:"
 print len(recipes_spoonacular_all)
 
 
