@@ -238,87 +238,66 @@ for recipe in edaman:
     demo_data.append(' '.join(mdata))
 
 docs_new = demo_data
-docs_new2 = ['rice risotto potatoes eggs onion tomato garlic']
-
 X_new_counts = count_vect.transform(docs_new)
 X_new_tfidf = tfidf_transformer.transform(X_new_counts)
 
 predicted = clf.predict(X_new_tfidf)
-
-i=0
-recipes_edaman_out = []
-for each_recipe in edaman:
-    title = each_recipe["title"]
-    ingredients = each_recipe["ingredients"]
-    cuisine = predicted[i]
-
-    recipe = dict()
-
-    recipe['ingredients'] = ingredients
-    recipe['title'] = title
-    recipe['cuisines'] = cuisine
-    i = i + 1
-
-    recipes_edaman_out.append(recipe)
-
+#-----
+with open(os.getcwd()+'/data/edamam_recipes.json') as data_file:
+    data = json.load(data_file)
+    j = 0
+    recipes_edaman_2 = []
+    for recipe_data in data:
+        cuisine = predicted[j]
+        recipe_data['cuisines'] = cuisine
+        j = j+1
+        recipes_edaman_2.append(recipe_data)
 
 print "Number of recipes from edaman"
-print len(recipes_edaman_out)
-
+print len(recipes_edaman_2)
 file = open(os.getcwd()+'/data/edamam_recipes_cuisines.json', 'wb')
-file.write(json.dumps(recipes_edaman_out))
+file.write(json.dumps(recipes_edaman_2))
 file.close()
 
-
 #-----cuisines for spoonacular but the ones that the cuisnine label was empty
-demo_data = []
-spoonacular_nolabel = data_nolabel
+with open(os.getcwd()+'/data/spoonacular_recipes1.json') as data_file:
+    data = json.load(data_file)
+    recipes_spoon = []
 
-for recipe in spoonacular_nolabel:
-    mdata = recipe['data']
-    demo_data.append(' '.join(mdata))
+    for recipe_s in data:
+        title = recipe_s['title']
+        cuisines = recipe_s['cuisines']
+        ingredients = []
 
-docs_new = demo_data
-X_new_counts = count_vect.transform(docs_new)
+        for ingredient in recipe_s['ingredients']:
+            ingredients.append(ingredient['name'])
 
-X_new_tfidf = tfidf_transformer.transform(X_new_counts)
-predicted = clf.predict(X_new_tfidf)
+        title_words = title.split(" ")
+        data_spoonacular = ingredients + title_words
+        demo_data = []
+        demo_data.append(' '.join(data_spoonacular))
 
-i=0
-recipes_spoonacular_all = []
+        if len(cuisines) == 0:
+            docs_new = demo_data
+            X_new_counts = count_vect.transform(docs_new)
 
-for each_recipe in spoonacular_nolabel:
-    title = each_recipe["title"]
-    ingredients = each_recipe["ingredients"]
-    cuisine = predicted[i]
+            X_new_tfidf = tfidf_transformer.transform(X_new_counts)
+            prediction_emptylabel = clf.predict(X_new_tfidf)
+            p = str(prediction_emptylabel)
 
-    recipe = dict()
+            recipe_s['cuisines'] = p
 
-    recipe['ingredients'] = ingredients
-    recipe['title'] = title
-    recipe['cuisines'] = cuisine
-    i = i + 1
-
-    recipes_spoonacular_all.append(recipe)
-
-for each_recipe in data_label:
-    title = each_recipe["title"]
-    ingredients = each_recipe["ingredients"]
-    cuisine = recipe['cuisines']
-
-    recipe = dict()
-    recipe['ingredients'] = ingredients
-    recipe['title'] = title
-    recipe['cuisines'] = cuisine
-    recipes_spoonacular_all.append(recipe)
+        recipes_spoon.append(recipe_s)
 
 print "Total spoonacular with cuisines:"
-print len(recipes_spoonacular_all)
+print len(recipes_spoon)
 
 
 file = open(os.getcwd()+'/data/spoonacular_recipes_cuisines.json', 'wb')
-file.write(json.dumps(recipes_spoonacular_all))
+file.write(json.dumps(recipes_spoon))
 file.close()
 
+#------------------
+
 print "Check in your data folder if you have 2 json files with"
-print "spoonacular_recipes_cuisines and edamam_recipes_cuisines names"
+print "spoonacular_recipes_cuisines and edamam_recipes_cuisines "
