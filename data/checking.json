@@ -1,0 +1,81 @@
+
+#--------------Edaman-----
+
+#--------------------Before
+{"labels": ["Vegetarian", "Peanut-Free", "Tree-Nut-Free", "Soy-Free", "Fish-Free", "Shellfish-Free", "High-Fiber", "Low-Sodium"], 
+	"image": "https://www.edamam.com/web-img/8bb/8bb76a6852aa6383785f54c2445a628c.jpg", 
+	"ingredients": [{"amount": 1.0, "name": "puff pastry", "unit": "sheet"}, 
+					{"amount": 4.5, "name": "apples", "unit": "apple"}, 
+					{"amount": 2.0, "name": "flour", "unit": "tsp"}, 
+					{"amount": 2.0, "name": "sugar", "unit": "tsp"}, 
+					{"amount": 4.5, "name": "apples", "unit": "medium"}, 
+					{"amount": 1.0, "name": "lemon", "unit": "lemon"}, 
+					{"amount": 2.0, "name": "butter", "unit": "tbsp"}, 
+					{"amount": 1.0, "name": "egg white", "unit": "egg"}],
+	 "title": "Picking apples for a free-form apple tart"}
+
+#---------------After
+
+{"title": "Picking apples for a free-form apple tart", 
+	"image": "https://www.edamam.com/web-img/8bb/8bb76a6852aa6383785f54c2445a628c.jpg", 
+	"labels": ["Vegetarian", "Peanut-Free", "Tree-Nut-Free", "Soy-Free", "Fish-Free", "Shellfish-Free", "High-Fiber", "Low-Sodium"], 
+	"cuisines": "american", 
+	"ingredients": [{"amount": 1.0, "name": "puff pastry", "unit": "sheet"}, 
+					{"amount": 4.5, "name": "apples", "unit": "apple"}, 
+					{"amount": 2.0, "name": "flour", "unit": "tsp"}, 
+					{"amount": 2.0, "name": "sugar", "unit": "tsp"}, 
+					{"amount": 4.5, "name": "apples", "unit": "medium"}, 
+					{"amount": 1.0, "name": "lemon", "unit": "lemon"},
+					{"amount": 2.0, "name": "butter", "unit": "tbsp"}, 
+					{"amount": 1.0, "name": "egg white", "unit": "egg"}]}
+
+
+#---------------------------------------------------------------------------------------------------------------------
+#----- spoonacular--------------------------------------------------------------
+#-----------Before
+[{"cuisines": ["mediterranean", "european", "italian"], 
+	"image": "https://spoonacular.com/recipeImages/minestrone-with-parmigiano-reggiano-291329.jpeg", 
+	"labels": [], 
+	"ingredients": [{"category": "Produce", "amount": 1.0, "name": "bouquet garni", "unit": ""}, 
+		{"category": "Produce", "amount": 2.0, "name": "carrots", "unit": ""}, 
+		{"category": "Produce", "amount": 2.0, "name": "celery", "unit": "stalks"}, 
+		{"category": "Canned and Jarred", "amount": 3.0, "name": "dried cannellini beans", "unit": "cups"},
+		{"category": "Produce", "amount": 4.0, "name": "garlic", "unit": "cloves"}, 
+		{"category": "Spices and Seasonings", "amount": 4.0, "name": "kosher salt", "unit": "servings"},
+		{"category": "Canned and Jarred", "amount": 4.0, "name": "low sodium chicken stock", "unit": "cups"}, 
+		{"category": "Oil, Vinegar, Salad Dressing", "amount": 3.0, "name": "olive oil", "unit": "tablespoons"},
+		{"category": "Meat", "amount": 0.25, "name": "pancetta", "unit": "pound"}, 
+		{"category": "Cheese", "amount": 4.0, "name": "parmigiano reggiano cheese", "unit": "servings"}, 
+		{"category": "Produce", "amount": 1.0, "name": "red onion", "unit": ""},
+		{"category": "Produce", "amount": 0.5, "name": "savoy cabbage", "unit": "head"},
+		{"category": "Produce", "amount": 1.0, "name": "spinach", "unit": "cup"}, 
+		{"category": "Produce", "amount": 0.5, "name": "swiss chard", "unit": "bunch"}, 
+		{"category": "Canned and Jarred", "amount": 3.0, "name": "tomatoes", "unit": ""}, 
+		{"category": "Produce", "amount": 1.0, "name": "waxy potato", "unit": ""}], 
+	"title": "Minestrone With Parmigiano-Reggiano"},]
+
+#After
+
+[{"cuisines": ["mediterranean", "european", "italian"], 
+	"image": "https://spoonacular.com/recipeImages/minestrone-with-parmigiano-reggiano-291329.jpeg", 
+	"labels": [["Egg-Free", "Fish-Free", "Gluten-Free", "Peanut-Free", "Shellfish-Free", "Soy-Free", "Tree-Nut-Free"]], 
+	"title": "Minestrone With Parmigiano-Reggiano", 
+	"ingredients": [{"category": "Produce", "amount": 1.0, "name": "bouquet garni", "unit": ""}, 
+		{"category": "Produce", "amount": 2.0, "name": "carrots", "unit": ""},
+		 {"category": "Produce", "amount": 2.0, "name": "celery", "unit": "stalks"}, 
+		 {"category": "Canned and Jarred", "amount": 3.0, "name": "dried cannellini beans", "unit": "cups"}, 
+		 {"category": "Produce", "amount": 4.0, "name": "garlic", "unit": "cloves"},
+		  {"category": "Spices and Seasonings", "amount": 4.0, "name": "kosher salt", "unit": "servings"}, 
+		  {"category": "Canned and Jarred", "amount": 4.0, "name": "low sodium chicken stock", "unit": "cups"}, 
+		  {"category": "Oil, Vinegar, Salad Dressing", "amount": 3.0, "name": "olive oil", "unit": "tablespoons"}, 
+		  {"category": "Meat", "amount": 0.25, "name": "pancetta", "unit": "pound"}, 
+		  {"category": "Cheese", "amount": 4.0, "name": "parmigiano reggiano cheese", "unit": "servings"}, 
+		  {"category": "Produce", "amount": 1.0, "name": "red onion", "unit": ""}, 
+		  {"category": "Produce", "amount": 0.5, "name": "savoy cabbage", "unit": "head"},
+		   {"category": "Produce", "amount": 1.0, "name": "spinach", "unit": "cup"}, 
+		   {"category": "Produce", "amount": 0.5, "name": "swiss chard", "unit": "bunch"}, 
+		   {"category": "Canned and Jarred", "amount": 3.0, "name": "tomatoes", "unit": ""},
+		    {"category": "Produce", "amount": 1.0, "name": "waxy potato", "unit": ""}]}
+
+
+diet_label.py

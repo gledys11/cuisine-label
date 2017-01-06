@@ -299,5 +299,6 @@ file.close()
 
 #------------------
 
+print "Message from Cuisine"
 print "Check in your data folder if you have 2 json files with"
 print "spoonacular_recipes_cuisines and edamam_recipes_cuisines "
